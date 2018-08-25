@@ -1,0 +1,11 @@
+.hn-app {
+  width: 100%;
+  height: 100%;
+  background: #333;
+
+  &__title {
+    color: #ddd;
+    padding-top: 2rem;
+    text-align: center;
+  }
+}
