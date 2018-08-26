@@ -1,0 +1,23 @@
+.hn-pagination {
+  width: 80%;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem auto;
+  color: var(--main-dark-color);
+  background: var(--main-light-color);
+
+  &__prev,
+  &__next  {
+    width: 10%;
+    text-align: center;
+  }
+
+  &__content {
+    width: 80%;
+  }
+
+  span {
+    margin: 1rem;
+  }
+}
