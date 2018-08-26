@@ -1,15 +1,6 @@
 .hn-news-board {
-
-  &__row {
-    width: 80%;
-    padding: 1rem;
-    display: flex;
-    margin: 0.5rem auto;
-    border: 1px solid var(--main-light-color);
-  }
-
-  &__labels,  
-  &__content {
-    padding: 1rem;
-  }
+  width: 80%;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  background: var(--main-light-color);
 }

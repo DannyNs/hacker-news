@@ -4,36 +4,38 @@ import { shallow } from 'enzyme';
 import Loader from '.';
 
 describe('Loader', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<Loader loading={false} />);
-  });
-
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Loader loading />, div);
   });
 
-  it('should be not render fully when loading is false', () => {
-    // given
-    const loading = false;
+  describe('props', () => {
+    let wrapper;
 
-    // when
-    wrapper.setProps({ loading });
+    beforeEach(() => {
+      wrapper = shallow(<Loader loading={false} />);
+    });
 
-    // then
-    expect(wrapper.find('h2')).toHaveLength(0);
-  });
+    it('should be not render fully when loading is false', () => {
+      // given
+      const loading = false;
 
-  it('should render fully when loading is true', () => {
-    // given
-    const loading = true;
+      // when
+      wrapper.setProps({ loading });
 
-    // when
-    wrapper.setProps({ loading });
+      // then
+      expect(wrapper.find('h2')).toHaveLength(0);
+    });
 
-    // then
-    expect(wrapper.find('h2')).toHaveLength(1);
+    it('should render fully when loading is true', () => {
+      // given
+      const loading = true;
+
+      // when
+      wrapper.setProps({ loading });
+
+      // then
+      expect(wrapper.find('h2')).toHaveLength(1);
+    });
   });
 });

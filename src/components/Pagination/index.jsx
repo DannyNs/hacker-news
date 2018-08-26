@@ -10,7 +10,7 @@ const Pagination = observer(({
   <div className="hn-pagination">
 
     <div className="hn-pagination__prev">
-      <button onClick={goToPrev} type="button" className="hn-pagination__prev-button">
+      <button onClick={goToPrev} type="button" className="button button--dark">
         prev
       </button>
     </div>
@@ -33,7 +33,7 @@ const Pagination = observer(({
     </div>
 
     <div className="hn-pagination__next">
-      <button onClick={goToNext} type="button" className="hn-pagination__next-button">
+      <button onClick={goToNext} type="button" className="button button--dark">
         next
       </button>
     </div>

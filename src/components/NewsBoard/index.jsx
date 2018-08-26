@@ -1,25 +1,35 @@
 import React from 'react';
 import PropType from 'prop-types';
 import { observer } from 'mobx-react';
-import { News } from '../../stores/NewsStore';
+import News from '../../stores/NewsStore/News';
+import NewsRow from './NewsRow';
+import CommentsRow from './CommentsRow';
 
 import './index.scss';
 
 const NewsBoard = observer(({ news }) => (
   <div className="hn-news-board">
     {
-      news.map(n => (
-        <div key={n.id} className="hn-news-board__row">
-          <div className="hn-news-board__labels">
-            <p>Author: </p>
-            <p>Title: </p>
+      news
+        .map(({
+          id, by, time, title, score, comments, commentsLength, commentsVisible, setCommentsVisible,
+        }) => (
+          <div key={id}>
+            <NewsRow
+              by={by}
+              time={time}
+              title={title}
+              score={score}
+              commentsLength={commentsLength}
+            />
+            <CommentsRow
+              comments={comments}
+              commentsLength={commentsLength}
+              commentsVisible={commentsVisible}
+              setCommentsVisible={setCommentsVisible}
+            />
           </div>
-          <div className="hn-news-board__content">
-            <p>{n.by}</p>
-            <p>{n.title}</p>
-          </div>
-        </div>
-      ))
+        ))
     }
   </div>
 ));
