@@ -16,20 +16,20 @@ const Pagination = observer(({
     </div>
 
     <div className="hn-pagination__content">
-      <span>
-        Page:
-      </span>
-      {page}
-      <span>
-        Displaying:
-      </span>
-      {(page - 1) * itemsPerPage}
+      <div>
+        <span>Page:</span>
+        {page}
+      </div>
+      <div>
+        <span>Displaying:</span>
+        {(page - 1) * itemsPerPage}
         -
-      {page * itemsPerPage < totalNumberofItems ? page * itemsPerPage : totalNumberofItems}
-      <span>
-        Total:
-      </span>
-      {totalNumberofItems}
+        {page * itemsPerPage < totalNumberofItems ? page * itemsPerPage : totalNumberofItems}
+      </div>
+      <div>
+        <span>Total:</span>
+        {totalNumberofItems}
+      </div>
     </div>
 
     <div className="hn-pagination__next">
