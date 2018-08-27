@@ -1,0 +1,22 @@
+.hn-comment-view {
+  margin: 1rem 0;
+  border: 1px solid var(--main-light-color);
+
+  &__header {
+    color: var(--main-dark-color);
+    background: var(--main-light-color);
+
+    div {
+      display: inline;
+      margin: 1rem;
+    }
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+
+  &__children {
+    margin: 0 1rem;
+  }
+}

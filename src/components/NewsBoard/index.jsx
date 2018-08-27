@@ -14,7 +14,7 @@ const NewsBoard = observer(({ news }) => (
         .map(({
           id, by, time, title, score, comments, commentsLength, commentsVisible, setCommentsVisible,
         }) => (
-          <div key={id}>
+          <div className="hn-news-board__child" key={id}>
             <NewsRow
               by={by}
               time={time}

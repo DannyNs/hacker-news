@@ -2,6 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import { observer } from 'mobx-react';
 import Comment from '../../../stores/NewsStore/Comment';
+import { renderChildComments } from './CommentView';
 
 import './index.scss';
 
@@ -23,13 +24,7 @@ const CommentsRow = observer(({
       {
         commentsVisible && (
           <div>
-            {
-              comments.map(comment => (
-                <div key={comment.id}>
-                  {JSON.stringify(comment)}
-                </div>
-              ))
-            }
+            {renderChildComments(comments)}
           </div>
         )
       }
