@@ -7,14 +7,13 @@ export default class Comment {
   @observable
   loading = true;
 
-  @observable
   by = '';
 
-  @observable
   text = '';
 
-  @observable
   time = new Date().getTime();
+
+  deleted = false;
 
   @observable
   kids = [];

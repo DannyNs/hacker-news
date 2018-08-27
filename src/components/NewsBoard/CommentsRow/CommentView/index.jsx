@@ -12,21 +12,23 @@ export const renderChildComments = ((comments) => {
     .filter(({ loading }) => loading).length > 0;
 
   return commentsLoading ? (<Loader loading />)
-    : comments.map(({
-      id, by, text, time, comments: childComments,
-    }) => (
-      <CommentView
-        key={id}
-        by={by}
-        text={text}
-        time={time}
-        comments={childComments}
-      />
-    ));
+    : comments
+      .map(({
+        id, by, deleted, text, time, comments: childComments,
+      }) => (
+        <CommentView
+          key={id}
+          by={by}
+          text={text}
+          time={time}
+          deleted={deleted}
+          comments={childComments}
+        />
+      ));
 });
 
 const CommentView = observer(({
-  by, text, time, comments,
+  by, text, time, deleted, comments,
 }) => (
   <div className="hn-comment-view">
     <div className="hn-comment-view__header">
@@ -40,7 +42,7 @@ const CommentView = observer(({
       </div>
     </div>
     <div className="hn-comment-view__content">
-      {renderHTML(text)}
+      {deleted ? <span>Comment deleted</span> : renderHTML(text)}
     </div>
     <div className="hn-comment-view__children">
       {
