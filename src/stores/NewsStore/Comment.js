@@ -8,10 +8,10 @@ export default class Comment {
   loading = true;
 
   @observable
-  by;
+  by = '';
 
   @observable
-  text;
+  text = '';
 
   @observable
   time;
