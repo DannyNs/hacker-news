@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "eslint --ext .jsx,.js .",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/DannyNs/hacker-news#readme",
   "jest": {
-    "setupTestFrameworkScriptFile": "./jest.setup.js",
+    "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup.js",
+    "testMatch": [
+      "<rootDir>/src/**/*.test.js?(x)",
+      "<rootDir>/__tests__/**/*.test.js?(x)"
+    ],
     "moduleNameMapper": {
       "^.+\\.(css|less|scss)$": "identity-obj-proxy"
     }
