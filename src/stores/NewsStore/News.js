@@ -4,17 +4,15 @@ import {
 import Comment from './Comment';
 
 export default class News {
-  id;
+  id = '';
 
-  by;
+  by = '';
 
-  title;
+  title = '';
 
-  time;
+  time = new Date().getTime();
 
-  url;
-
-  score;
+  score = 0;
 
   @observable
   kids = [];

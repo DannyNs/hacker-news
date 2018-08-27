@@ -2,7 +2,7 @@ import { observable, autorun } from 'mobx';
 import axios from 'axios';
 
 export default class Comment {
-  id;
+  id = '';
 
   @observable
   loading = true;
@@ -14,7 +14,7 @@ export default class Comment {
   text = '';
 
   @observable
-  time;
+  time = new Date().getTime();
 
   @observable
   kids = [];

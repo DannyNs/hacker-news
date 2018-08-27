@@ -6,19 +6,23 @@ import Comment from '../../../../stores/NewsStore/Comment';
 
 import './index.scss';
 
-export const renderChildComments = (comments => comments.map(({
-  id, loading, by, text, time, comments: childComments,
-}) => (
-  loading ? (<div key={id}>Loading...</div>) : (
-    <CommentView
-      key={id}
-      by={by}
-      text={text}
-      time={time}
-      comments={childComments}
-    />
-  )
-)));
+export const renderChildComments = ((comments) => {
+  const commentsLoading = comments
+    .filter(({ loading }) => loading).length > 0;
+
+  return commentsLoading ? (<div>Loading...</div>)
+    : comments.map(({
+      id, by, text, time, comments: childComments,
+    }) => (
+      <CommentView
+        key={id}
+        by={by}
+        text={text}
+        time={time}
+        comments={childComments}
+      />
+    ));
+});
 
 const CommentView = observer(({
   by, text, time, comments,
