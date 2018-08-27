@@ -3,6 +3,7 @@ import PropType from 'prop-types';
 import { observer } from 'mobx-react';
 import renderHTML from 'react-render-html';
 import Comment from '../../../../stores/NewsStore/Comment';
+import Loader from '../../../Loader';
 
 import './index.scss';
 
@@ -10,7 +11,7 @@ export const renderChildComments = ((comments) => {
   const commentsLoading = comments
     .filter(({ loading }) => loading).length > 0;
 
-  return commentsLoading ? (<div>Loading...</div>)
+  return commentsLoading ? (<Loader loading />)
     : comments.map(({
       id, by, text, time, comments: childComments,
     }) => (
