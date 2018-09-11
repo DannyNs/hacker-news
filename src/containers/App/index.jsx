@@ -22,15 +22,17 @@ class App extends React.Component {
 
     return (
       <div className="hn-app">
-        <h1 className="hn-app__title">{title}</h1>
-        <Loader loading={loading} />
-        <Pagination
-          page={page}
-          goToPrev={goToPrevPage}
-          goToNext={goToNextPage}
-          itemsPerPage={itemsPerPage}
-          totalNumberofItems={newsCount}
-        />
+        <div className="hn-app__controls">
+          <h1 className="hn-app__controls--center">{title}</h1>
+          <Loader loading={loading} />
+          <Pagination
+            page={page}
+            goToPrev={goToPrevPage}
+            goToNext={goToNextPage}
+            itemsPerPage={itemsPerPage}
+            totalNumberofItems={newsCount}
+          />
+        </div>
         <NewsBoard news={latestNews} />
       </div>
     );

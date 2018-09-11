@@ -2,8 +2,12 @@
   width: 100%;
   height: 100%;
 
-  &__title {
-    padding-top: 2rem;
-    text-align: center;
+  &__controls {
+    max-height: 30%;
+
+    &--center {
+      padding-top: 2rem;
+      text-align: center;
+    }
   }
 }

@@ -14,7 +14,7 @@ const CommentsRow = observer(({
       <button
         className="button button--light"
         onClick={setCommentsVisible}
-        disabled={!commentsLength}
+        disabled={!commentsLength || commentsVisible}
         type="button"
       >
         Show comments
